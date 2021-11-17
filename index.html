@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Ventas</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <a class="text-reset me-3 " href="#">
+          <i class="fas fa-shopping-cart carrito"></i>
+        </a>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+
+
+
+  <main>
+      <div class="conteiner p-3">
+          <div class="p-3">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img
+                              src="https://www.xt-pc.com.ar/img/productos/Pics_Prod/MOT1377.jpg"
+                              alt="..."
+                              class="img-fluid rounded-start"
+                            />
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">MOTHER GIGABYTE B450M AORUS</h5>
+                              <p class="card-text">
+                                Motherboard Gigabyte B450m Ds3h Wifi Amd Am4 Ryzen Ddr4
+                              </p>
+                              <p class="card-text">
+                                <small class="text-muted">12.150 $</small>
+                              </p>
+                              <a href="#!" class="btn btn-primary" onclick="agregarCarrito(0)">Comprar</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img
+                              src="https://www.venex.com.ar/products_images/1614697752_placa-de-video-evga-nvidia-geforce-rtx-3070-xc3-ultra-gaming-8gb.jpg"
+                              alt="..."
+                              class="img-fluid rounded-start"
+                            />
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">EVGA NVIDIA GEFORCE RTX 3070 XC3</h5>
+                              <p class="card-text">
+                                Placa de video Nvidia Evga Gaming GeForce RTX 30 Series RTX 3070 8GB
+                              </p>
+                              <p class="card-text">
+                                <small class="text-muted">320.000 $</small>
+                              </p>
+                              <a href="#!" class="btn btn-primary" onclick="agregarCarrito(1)">Comprar</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+            
+            <!-- <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark"  onclick="CargaArticulos()">
+                Carga Articulos
+            </button> -->
+            <br>
+            <div id="articulos"></div>
+            <br>
+            <div id="carrito" class="carrito-items" hidden>
+                <h3>Carrito:</h3>
+                <div id="carritoItems"></div>
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" onclick="procesarPago()" >
+                        Pagar
+                    </button>
+                </div>
+            </div>
+            
+          </div>
+      </div>
+  </main>
+
+    
+    <!--<button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark" onclick="ControlInventario()">
+        Control Inventario
+    </button>-->
+    <script src="inicial.js"></script>
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+</body>
+</html>
