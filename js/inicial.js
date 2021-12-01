@@ -1,4 +1,4 @@
-/*  Clases */
+/* ------ CLASES ------ */
 class Articulo {
   constructor(id, nombre, precio) {
     this.id = id;
@@ -84,16 +84,16 @@ class ItemTienda {
   }
 }
 
-/* Variables globales */
+/* ----- VARIABLES GLOBALES ----- */
 var articulosCargados = [];
 let tienda = new StockTienda();
 let carrito = new Carrito();
 var gananciasDia = 0;
 
-/* Carga inicial de datos (simula Base de datos) */
+/* ----- Carga inicial de datos (simula Base de datos) ------ */
 cargaArticulos();
 
-/* Funciones */
+/* ----- FUNCIONES ----- */
 function cargaArticulos() {
   tienda.agregarProductoAStock(
     new ItemTienda(
@@ -161,22 +161,20 @@ function procesarCarrito() {
 
 // procesa pago (al aceptar se entiende como pago), limpia html y carrito
 function procesarPago() {
-  let total = 0;
-  for (let i = 0; i < carrito.length; i++) {
-    total += carrito[i].subtotal;
-  }
-  alert("El total a pagar es: " + total);
+  alert("El total a pagar es: " + carrito.precioTotal);
+  //se guardan las ganancias del local en el dia podria ser util en un furturo
+  gananciasDia += carrito.precioTotal;
 
-  carrito = [];
+  carrito.items = [];
+
+  carritoSpan = document.getElementById("carrito-cant");
+  carritoSpan.innerHTML = 0;
 
   carritohtml = document.getElementById("carrito");
   carritohtml.setAttribute("hidden", true);
 
   carritoItemsHtml = document.getElementById("carritoItems");
   carritoItemsHtml.innerHTML = "";
-
-  //se guardan las ganancias del local en el dia podria ser util en un furturo
-  gananciasDia += total;
 }
 
 // CARGA HTML PRODUCTOS
