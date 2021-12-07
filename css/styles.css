@@ -28,5 +28,13 @@
 }
 
 .card_producto {
-  width: 60% !important;
+  width: 80% !important;
+}
+
+.card-item-carrito {
+  background-color: rgb(238, 236, 236);
+}
+
+.qty i {
+  font-size: 11px;
 }

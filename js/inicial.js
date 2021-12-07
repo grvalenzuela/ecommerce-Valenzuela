@@ -1,93 +1,11 @@
-/* ------ CLASES ------ */
-class Articulo {
-  constructor(id, nombre, precio) {
-    this.id = id;
-    this.nombre = nombre;
-    this.precio = parseFloat(precio);
-  }
-}
-
-class Carrito {
-  constructor() {
-    this.items = [];
-    this.precioTotal = 0;
-  }
-
-  agregarProductoCarrito(itemCarrito) {
-    this.items.push(itemCarrito);
-    this.calcularTotalCarrito();
-  }
-
-  eliminarProductoCarrito(articulo) {
-    for (var i = 0; i < arr.length; i++) {
-      if (this.items[i] === articulo.nombre) {
-        this.items.splice(i, 1);
-      }
-    }
-  }
-
-  subirCantidadProducto(idArticulo) {
-    itemCarrito = this.items.find((item) => item.articulo.id == idArticulo);
-    itemCarrito.sumarCantidad();
-  }
-
-  calcularTotalCarrito() {
-    this.precioTotal = this.items.reduce(
-      (acumulador, itemCarrito) => itemCarrito.articulo.precio + acumulador,
-      0
-    );
-  }
-}
-
-class ItemCarrito {
-  constructor(articulo) {
-    this.articulo = articulo;
-    this.cantidad = 1;
-  }
-
-  sumarCantidad() {
-    this.cantidad++;
-  }
-}
-
-class StockTienda {
-  constructor(articulos = []) {
-    this.articulos = articulos;
-  }
-
-  agregarProductoAStock(itemTienda) {
-    this.articulos.push(itemTienda);
-  }
-
-  // reducirStock(idBuscado){
-  //     itemTienda = this.articulos.find(item => item.articulo.id == idBuscado);
-  //     itemTienda.reducirStock();
-  // }
-
-  encontrarProductoPorNombreEnTienda(nombreBuscado) {
-    return this.articulos.find((item) => item.articulo.nombre == nombreBuscado);
-  }
-
-  encontrarProductoPorIdEnTienda(idBuscado) {
-    return this.articulos.find((item) => item.articulo.id == idBuscado);
-  }
-}
-
-class ItemTienda {
-  constructor(articulo, stock) {
-    this.articulo = articulo;
-    this.stock = stock;
-  }
-
-  reducirStock() {
-    this.stock--;
-  }
-}
-
 /* ----- VARIABLES GLOBALES ----- */
 var articulosCargados = [];
 let tienda = new StockTienda();
 let carrito = new Carrito();
+if (localStorage.getItem("carritoCompra")) {
+  carrito.items = JSON.parse(localStorage.getItem("carritoCompra"));
+}
+
 var gananciasDia = 0;
 
 /* ----- Carga inicial de datos (simula Base de datos) ------ */
@@ -125,6 +43,7 @@ function cargaArticulos() {
       10
     )
   );
+
   cargaProductos();
 }
 
@@ -141,44 +60,22 @@ function agregarCarrito(id) {
 
 // procesa el agregado al carrito
 function procesarCarrito() {
-  let htmlItems = "";
-
-  carritohtml = document.getElementById("carrito");
-  carritohtml.removeAttribute("hidden");
-
-  carritoItemsHtml = document.getElementById("carritoItems");
-
   carritoSpan = document.getElementById("carrito-cant");
-
-  for (let i = 0; i < carrito.items.length; i++) {
-    htmlItems += "<h2>" + carrito.items[i].articulo.nombre + "</h2>";
-  }
-  htmlItems +=
-    "<br> <h2>Subtotal: " + carrito.precioTotal + "</span></h2> <br>";
-  carritoItemsHtml.innerHTML = htmlItems;
   carritoSpan.innerHTML = carrito.items.length;
+
+  storageCarrito();
 }
 
-// procesa pago (al aceptar se entiende como pago), limpia html y carrito
-function procesarPago() {
-  alert("El total a pagar es: " + carrito.precioTotal);
-  //se guardan las ganancias del local en el dia podria ser util en un furturo
-  gananciasDia += carrito.precioTotal;
-
-  carrito.items = [];
-
-  carritoSpan = document.getElementById("carrito-cant");
-  carritoSpan.innerHTML = 0;
-
-  carritohtml = document.getElementById("carrito");
-  carritohtml.setAttribute("hidden", true);
-
-  carritoItemsHtml = document.getElementById("carritoItems");
-  carritoItemsHtml.innerHTML = "";
+function storageCarrito() {
+  localStorage.removeItem("carritoCompra");
+  localStorage.setItem("carritoCompra", JSON.stringify(carrito.items));
 }
 
 // CARGA HTML PRODUCTOS
 function cargaProductos() {
+  carritoSpan = document.getElementById("carrito-cant");
+  carritoSpan.innerHTML = carrito.items.length;
+
   let contenedor = document.getElementById("contenedorProductos");
 
   for (let itemTienda of tienda.articulos) {
@@ -191,7 +88,7 @@ function cargaProductos() {
           <div class="row d-flex align-items-center ">
             <div class="col-md-4 img_container">
               <img
-                src="img/${itemTienda.articulo.id}.jpg"
+                src="../img/${itemTienda.articulo.id}.jpg"
                 alt="..."
                 class="img-fluid rounded-start img_producto"
               />

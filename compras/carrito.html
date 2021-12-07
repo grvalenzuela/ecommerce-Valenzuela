@@ -7,20 +7,20 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Inicio</title>
+    <title>Carrito</title>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <!-- Google Fonts Roboto -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
     <!-- MDB -->
-    <link rel="stylesheet" href="MDB/css/mdb.min.css" />
+    <link rel="stylesheet" href="../MDB/css/mdb.min.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -83,15 +83,62 @@
         <div class="">
           <div class="row">
             <div class="col-md-3"></div>
-            <div
-              class="col-md-6 columna_central p-3"
-              id="contenedorProductos"
-            ></div>
+            <div class="col-md-6 columna_central p-3">
+              <div class="p-2">
+                <div class="row d-flex justify-content-center">
+                  <h4><i class="fas fa-shopping-cart"></i> Carrito</h4>
+                </div>
+              </div>
+              <div id="contenedor-carrito"></div>
+              <div
+                class="
+                  d-flex
+                  flex-row
+                  align-items-center
+                  mt-3
+                  p-2
+                  bg-white
+                  rounded
+                "
+              >
+                <input
+                  type="text"
+                  class="form-control border-0"
+                  placeholder="Codigo de descuento"
+                /><button
+                  class="btn btn-outline-success btn-sm ml-2"
+                  type="button"
+                >
+                  Aplicar
+                </button>
+              </div>
+              <div
+                class="
+                  d-flex
+                  flex-row
+                  align-items-center
+                  mt-3
+                  p-2
+                  bg-white
+                  rounded
+                "
+              >
+                <button
+                  class="btn btn-dark btn-block btn-lg ml-2"
+                  id="btn-pagar"
+                  type="button"
+                >
+                  Pagar
+                </button>
+              </div>
+            </div>
 
             <div class="col-md-3"></div>
           </div>
-          <br />
-          <br />
+
+          <!-- <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark"  onclick="CargaArticulos()">
+                Carga Articulos
+            </button> -->
         </div>
       </div>
     </main>
@@ -265,11 +312,11 @@
     <!--<button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark" onclick="ControlInventario()">
         Control Inventario
     </button>-->
-    <script src="js/clases.js"></script>
-    <script src="js/inicial.js"></script>
+    <script src="../js/clases.js"></script>
+    <script src="../js/carrito.js"></script>
 
     <!-- MDB -->
-    <script type="text/javascript" src="MDB/js/mdb.min.js"></script>
+    <script type="text/javascript" src="../MDB/js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
   </body>
