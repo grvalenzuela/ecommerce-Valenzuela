@@ -29,6 +29,7 @@
 
 .card_producto {
   width: 80% !important;
+  min-width: 703px !important;
 }
 
 .card-item-carrito {

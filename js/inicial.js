@@ -18,7 +18,10 @@ function cargaArticulos() {
       new Articulo(
         1,
         "Placa de Video EVGA GeForce RTX 3090 24GB GDDR6X FTW3 ULTRA ICX3 ARGB",
-        550000
+        550000,
+        "EVGA",
+        "",
+        "PlacaVideo"
       ),
       15
     )
@@ -28,7 +31,10 @@ function cargaArticulos() {
       new Articulo(
         2,
         "Placa de Video PNY GeForce RTX 3060 Ti 8GB GDDR6 EPIC-X RGB Dual Fan LHR",
-        220000
+        220000,
+        "PNY",
+        "",
+        "PlacaVideo"
       ),
       6
     )
@@ -38,9 +44,64 @@ function cargaArticulos() {
       new Articulo(
         3,
         "Placa de Video GeForce MSI GTX 1650 4GB GDDR5 Ventus XS OC",
-        65000
+        65000,
+        "MSI",
+        "",
+        "PlacaVideo"
       ),
       10
+    )
+  );
+  tienda.agregarProductoAStock(
+    new ItemTienda(
+      new Articulo(
+        4,
+        "Procesador AMD Ryzen 7 3700X 4.4GHz AM4 Wraith Prism RGB Led Cooler",
+        46000,
+        "AMD",
+        "AMD",
+        "Procesador"
+      ),
+      16
+    )
+  );
+  tienda.agregarProductoAStock(
+    new ItemTienda(
+      new Articulo(
+        5,
+        "Procesador Intel Core i7 9700F 4.7Ghz Turbo 1151 Coffe Lake",
+        34000,
+        "Intel",
+        "Intel",
+        "Procesador"
+      ),
+      20
+    )
+  );
+  tienda.agregarProductoAStock(
+    new ItemTienda(
+      new Articulo(
+        6,
+        "Mother Asus Prime A520M-K AM4",
+        5000,
+        "Asus",
+        "AMD",
+        "Motherboard"
+      ),
+      8
+    )
+  );
+  tienda.agregarProductoAStock(
+    new ItemTienda(
+      new Articulo(
+        7,
+        "Mother Gigabyte B365M Gaming HD",
+        7000,
+        "Gigabyte",
+        "Intel",
+        "Motherboard"
+      ),
+      9
     )
   );
 
@@ -60,8 +121,8 @@ function agregarCarrito(id) {
 
 // procesa el agregado al carrito
 function procesarCarrito() {
-  carritoSpan = document.getElementById("carrito-cant");
-  carritoSpan.innerHTML = carrito.items.length;
+  carritoSpan = $("#carrito-cant");
+  carritoSpan.html(carrito.items.length);
 
   storageCarrito();
 }
@@ -73,18 +134,17 @@ function storageCarrito() {
 
 // CARGA HTML PRODUCTOS
 function cargaProductos() {
-  carritoSpan = document.getElementById("carrito-cant");
-  carritoSpan.innerHTML = carrito.items.length;
+  carritoSpan = $("#carrito-cant");
+  carritoSpan.html(carrito.items.length);
 
-  let contenedor = document.getElementById("contenedorProductos");
+  let contenedor = $("#contenedorProductos");
 
   for (let itemTienda of tienda.articulos) {
-    contenedor.innerHTML =
-      contenedor.innerHTML +
+    contenedor.append(
       `<div class="row d-flex justify-content-center">
     <div class="col-12 col-md-12 d-flex justify-content-center card_producto  p-3">
 
-      <div class="card" style="max-height: 250px;">
+      <div class="card" style="max-height: 250px; min-width: 706px; min-height: 182px">
           <div class="row d-flex align-items-center ">
             <div class="col-md-4 img_container">
               <img
@@ -109,15 +169,23 @@ function cargaProductos() {
         </div>
       
     </div>
-  </div>`;
+  </div>`
+    );
   }
 
-  let botonesAgregar = document.getElementsByClassName("btnAgregarCarrito");
+  let botonesAgregar = $(".btnAgregarCarrito");
 
-  for (let boton of botonesAgregar) {
-    let idArticulo = boton.dataset.id;
-    boton.addEventListener("click", function () {
+  botonesAgregar.each(function (i) {
+    let idArticulo = $(this).data("id");
+    $(this).on("click", function () {
       agregarCarrito(idArticulo);
     });
-  }
+  });
+
+  // for (let boton of botonesAgregar) {
+  //   let idArticulo = boton.dataset.id;
+  //   boton.bind("click", function () {
+  //     agregarCarrito(idArticulo);
+  //   });
+  // }
 }

@@ -1,9 +1,12 @@
 /* ------ CLASES ------ */
 class Articulo {
-  constructor(id, nombre, precio) {
+  constructor(id, nombre, precio, marca, compatible, tipo) {
     this.id = id;
     this.nombre = nombre;
     this.precio = parseFloat(precio);
+    this.marca = marca;
+    this.compatible = compatible;
+    this.tipo = tipo;
   }
 }
 
