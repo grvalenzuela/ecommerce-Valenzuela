@@ -6,15 +6,14 @@ cargaProductos();
 
 // CARGA HTML PRODUCTOS
 function cargaProductos() {
-  carritoSpan = document.getElementById("carrito-cant");
-  carritoSpan.innerHTML = carrito.items.length;
+  carritoSpan = $("#carrito-cant");
+  carritoSpan.html(carrito.items.length);
 
-  let contenedor = document.getElementById("contenedor-carrito");
-  contenedor.innerHTML = "";
+  let contenedor = $("#contenedor-carrito");
+  contenedor.html("");
 
   for (let itemCarrito of carrito.items) {
-    contenedor.innerHTML =
-      contenedor.innerHTML +
+    contenedor.append(
       `<div
       class="
         d-flex
@@ -31,7 +30,7 @@ function cargaProductos() {
       <div class="mr-1">
         <img
           class="rounded"
-          src="../img/${itemCarrito.articulo.id}.jpg"
+          src="../img/productos/${itemCarrito.articulo.id}.jpg"
           width="70"
         />
       </div>
@@ -58,22 +57,37 @@ function cargaProductos() {
       <a style="color: #f73015" href="#!" role="button" class="delete-item-carrito" data-id="${itemCarrito.articulo.id}">
         <i class="fas fa-trash-alt"></i>
       </a>
-    </div>`;
+    </div>`
+    );
   }
 
-  let botonPagar = document.getElementById("btn-pagar");
-  botonPagar.addEventListener("click", function () {
+  let botonPagar = $("#btn-pagar");
+  botonPagar.on("click", function () {
     procesarPago();
   });
 
-  let botonesAgregar = document.getElementsByClassName("delete-item-carrito");
+  let botonDescuento = $("#btn-descuento");
+  botonDescuento.on("click", function () {
+    aplicarDescuento();
+  });
 
-  for (let boton of botonesAgregar) {
-    let idArticulo = boton.dataset.id;
-    boton.addEventListener("click", function () {
+  let botonesAgregar = $(".delete-item-carrito");
+
+  botonesAgregar.each(function (i) {
+    let idArticulo = $(this).data("id");
+    $(this).on("click", function () {
       borrarItem(idArticulo);
     });
-  }
+
+    carrito.calcularTotalCarrito();
+  });
+
+  // for (let boton of botonesAgregar) {
+  //   let idArticulo = boton.dataset.id;
+  //   boton.addEventListener("click", function () {
+  //     borrarItem(idArticulo);
+  //   });
+  // }
 }
 
 function borrarItem(idArticulo) {
@@ -84,15 +98,14 @@ function borrarItem(idArticulo) {
 
 // procesa pago (al aceptar se entiende como pago), limpia html y carrito
 function procesarPago() {
-  carrito.calcularTotalCarrito();
   alert("El total a pagar es: " + carrito.precioTotal);
   //se guardan las ganancias del local en el dia podria ser util en un furturo
   //gananciasDia += carrito.precioTotal;
 
   carrito.items = [];
 
-  carritoSpan = document.getElementById("carrito-cant");
-  carritoSpan.innerHTML = 0;
+  carritoSpan = $("#carrito-cant");
+  carritoSpan.html(0);
 
   localStorage.removeItem("carritoCompra");
 
@@ -102,4 +115,50 @@ function procesarPago() {
 function storageCarrito() {
   localStorage.removeItem("carritoCompra");
   localStorage.setItem("carritoCompra", JSON.stringify(carrito.items));
+}
+
+function aplicarDescuento() {
+  let codigo = $("#codigo-descuento").val();
+
+  if (codigo == "Desc20") {
+    carrito.aplicarDescuento(20);
+    hmtlDescuento(20);
+  } else if (codigo == "Desc10") {
+    carrito.aplicarDescuento(10);
+    hmtlDescuento(10);
+  } else {
+  }
+}
+
+function hmtlDescuento(descuento) {
+  let contenedor = $("#contenedor-carrito");
+
+  let htmlDescuento = `<div
+  class="
+    d-flex
+    flex-row
+    justify-content-between
+    align-items-center
+    p-2
+    card-item-carrito
+    mt-4
+    px-3
+    rounded
+  "
+  style="display: none;"
+>
+  <div class="mr-1">
+    <img
+      class="rounded"
+      src="../img/descuento-${descuento}.png"
+      width="70"
+    />
+  </div>
+  <div class="d-flex flex-column align-items-center">
+    <span class="font-weight-bold">Descuento del ${descuento}%</span>
+    <div class="d-flex flex-row"></div>
+  </div>
+</div>`;
+
+  $(htmlDescuento).hide().appendTo("#contenedor-carrito").fadeIn(1000);
 }

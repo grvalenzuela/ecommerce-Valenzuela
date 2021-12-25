@@ -13,14 +13,14 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <!-- Google Fonts Roboto -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
     <!-- MDB -->
-    <link rel="stylesheet" href="MDB/css/mdb.min.css" />
+    <link rel="stylesheet" href="../MDB/css/mdb.min.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -59,7 +59,7 @@
         <!-- Right elements -->
         <div class="d-flex align-items-center">
           <!-- Icon -->
-          <a class="text-reset me-3" href="compras/carrito.html">
+          <a class="text-reset me-3" href="carrito.html">
             <i class="fas fa-shopping-cart fa-lg carrito">
               <span
                 id="carrito-cant"
@@ -80,10 +80,48 @@
         <div class="">
           <div class="row">
             <div class="col-md-3"></div>
-            <div
-              class="col-md-6 columna_central p-3"
-              id="contenedorProductos"
-            ></div>
+            <div class="col-md-6 columna_central p-3">
+              <div id="selector-tecno">
+                <h1>SELECCIONE TENCOLOGÍA</h1>
+                <br /><br /><br />
+                <div class="row" id="container-selector">
+                  <div class="col-md-6">
+                    <div class="containerImg">
+                      <a href="armapc/intel.html" id="btnIntel" role="button">
+                        <img
+                          src="../img/IntelBack.jpg"
+                          id="imgIntelBack"
+                          class="imgSelect"
+                          alt=""
+                        />
+                        <img
+                          src="../img/IntelLogo.png"
+                          id="imgIntelBack"
+                          class="imgLogo"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="containerImg">
+                      <a href="armapc/amd.html" id="btnAmd" role="button"
+                        ><img
+                          src="../img/AmdBack.jpg"
+                          id="imgAmdBack"
+                          class="imgSelect"
+                          alt="" />
+                        <img
+                          src="../img/AmdLogo.png"
+                          id="imgIntelBack"
+                          class="imgLogo"
+                          alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="col-md-3"></div>
           </div>
@@ -267,11 +305,11 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="js/clases.js"></script>
-    <script src="js/inicial.js"></script>
+    <script src="../js/clases.js"></script>
+    <script src="../js/armapc.js"></script>
 
     <!-- MDB -->
-    <script type="text/javascript" src="MDB/js/mdb.min.js"></script>
+    <script type="text/javascript" src="../MDB/js/mdb.min.js"></script>
 
     <!-- Custom scripts -->
     <script type="text/javascript"></script>

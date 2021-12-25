@@ -148,7 +148,7 @@ function cargaProductos() {
           <div class="row d-flex align-items-center ">
             <div class="col-md-4 img_container">
               <img
-                src="img/${itemTienda.articulo.id}.jpg"
+                src="img/productos/${itemTienda.articulo.id}.jpg"
                 alt="..."
                 class="img-fluid rounded-start img_producto"
               />

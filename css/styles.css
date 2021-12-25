@@ -15,7 +15,7 @@
 
 .columna_central {
   height: 100%;
-  min-height: 100%;
+  min-height: 700px;
   background-color: white;
 }
 
@@ -30,6 +30,7 @@
 .card_producto {
   width: 80% !important;
   min-width: 703px !important;
+  background-image: "../img/IntelBack.jpg";
 }
 
 .card-item-carrito {
@@ -38,4 +39,32 @@
 
 .qty i {
   font-size: 11px;
+}
+
+.containerImg {
+  max-height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.imgSelect {
+  max-width: initial;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.imgLogo {
+  transition: transform 0.3s;
+  position: absolute;
+  max-height: 300px;
+  top: 0px;
+  left: -20px;
+  z-index: 2;
+}
+
+.imgLogo:hover {
+  transform: scale(1.03);
 }

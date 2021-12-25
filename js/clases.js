@@ -40,6 +40,12 @@ class Carrito {
       0
     );
   }
+
+  aplicarDescuento(descuento) {
+    let porcentaje = parseFloat(descuento / 100);
+
+    this.precioTotal -= this.precioTotal * porcentaje;
+  }
 }
 
 class ItemCarrito {
