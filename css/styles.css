@@ -68,3 +68,7 @@
 .imgLogo:hover {
   transform: scale(1.03);
 }
+
+.img-cripto {
+  max-height: 80px;
+}

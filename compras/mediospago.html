@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Arma tu PC</title>
+    <title>Medios de Pago</title>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -86,48 +86,145 @@
           <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 columna_central p-3">
-              <div id="selector-tecno">
-                <h1>SELECCIONE TECNOLOGÍA</h1>
-                <br /><br /><br />
-                <div class="row" id="container-selector">
-                  <div class="col-md-6">
-                    <div class="containerImg">
-                      <a href="armapc/intel.html" id="btnIntel" role="button">
+              <h1>MEDIOS DE PAGO</h1>
+              <div class="p-4">
+                <div class="m-t-2 p-2">
+                  <h2>Tarjeta de Credito</h2>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
                         <img
-                          src="../img/IntelBack.jpg"
-                          id="imgIntelBack"
-                          class="imgSelect"
+                          class="img-cripto"
+                          src="../img/visa-logo.png"
                           alt=""
                         />
+                      </div>
+                    </div>
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
                         <img
-                          src="../img/IntelLogo.png"
-                          id="imgIntelBack"
-                          class="imgLogo"
+                          class="img-cripto"
+                          src="../img/mastercard-logo.png"
                           alt=""
                         />
-                      </a>
+                      </div>
+                    </div>
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/americanexpress-logo.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/naranja-logo.png"
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="containerImg">
-                      <a href="armapc/amd.html" id="btnAmd" role="button"
-                        ><img
-                          src="../img/AmdBack.jpg"
-                          id="imgAmdBack"
-                          class="imgSelect"
-                          alt="" />
+                </div>
+                <div class="m-t-2 p-2">
+                  <h2>Tarjeta de Debito</h2>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
                         <img
-                          src="../img/AmdLogo.png"
-                          id="imgIntelBack"
-                          class="imgLogo"
+                          class="img-cripto"
+                          src="../img/visa-deb-logo.png"
                           alt=""
-                      /></a>
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/mastercard-deb-logo.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/maestro-logo.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-3 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/visaelectron-logo.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-t-2 p-2">
+                  <h2>Mercado Pago</h2>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-12 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/mercadopago-logo.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-t-2 p-2">
+                  <h2>Cripto</h2>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-4 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/BTC-logo.png"
+                          alt=""
+                        />
+                        <div id="valor-btc"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/ETH-logo.png"
+                          alt=""
+                        />
+                        <div id="valor-eth"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 p-0 m-0">
+                      <div class="d-flex align-items-center">
+                        <img
+                          class="img-cripto"
+                          src="../img/BNB-logo.png"
+                          alt=""
+                        />
+                        <div id="valor-bnb"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="col-md-3"></div>
           </div>
           <br />
@@ -311,7 +408,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/clases.js"></script>
-    <script src="../js/armapc.js"></script>
+    <script src="../js/mediospago.js"></script>
 
     <!-- MDB -->
     <script type="text/javascript" src="../MDB/js/mdb.min.js"></script>
