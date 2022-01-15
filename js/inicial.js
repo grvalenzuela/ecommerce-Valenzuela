@@ -13,99 +13,10 @@ cargaArticulos();
 
 /* ----- FUNCIONES ----- */
 function cargaArticulos() {
-  tienda.agregarProductoAStock(
-    new ItemTienda(
-      new Articulo(
-        1,
-        "Placa de Video EVGA GeForce RTX 3090 24GB GDDR6X FTW3 ULTRA ICX3 ARGB",
-        550000,
-        "EVGA",
-        "",
-        "PlacaVideo"
-      ),
-      15
-    )
-  );
-  tienda.agregarProductoAStock(
-    new ItemTienda(
-      new Articulo(
-        2,
-        "Placa de Video PNY GeForce RTX 3060 Ti 8GB GDDR6 EPIC-X RGB Dual Fan LHR",
-        220000,
-        "PNY",
-        "",
-        "PlacaVideo"
-      ),
-      6
-    )
-  );
-  tienda.agregarProductoAStock(
-    new ItemTienda(
-      new Articulo(
-        3,
-        "Placa de Video GeForce MSI GTX 1650 4GB GDDR5 Ventus XS OC",
-        65000,
-        "MSI",
-        "",
-        "PlacaVideo"
-      ),
-      10
-    )
-  );
-  tienda.agregarProductoAStock(
-    new ItemTienda(
-      new Articulo(
-        4,
-        "Procesador AMD Ryzen 7 3700X 4.4GHz AM4 Wraith Prism RGB Led Cooler",
-        46000,
-        "AMD",
-        "AMD",
-        "Procesador"
-      ),
-      16
-    )
-  );
-  tienda.agregarProductoAStock(
-    new ItemTienda(
-      new Articulo(
-        5,
-        "Procesador Intel Core i7 9700F 4.7Ghz Turbo 1151 Coffe Lake",
-        34000,
-        "Intel",
-        "Intel",
-        "Procesador"
-      ),
-      20
-    )
-  );
-  tienda.agregarProductoAStock(
-    new ItemTienda(
-      new Articulo(
-        6,
-        "Mother Asus Prime A520M-K AM4",
-        5000,
-        "Asus",
-        "AMD",
-        "Motherboard"
-      ),
-      8
-    )
-  );
-  tienda.agregarProductoAStock(
-    new ItemTienda(
-      new Articulo(
-        7,
-        "Mother Gigabyte B365M Gaming HD",
-        7000,
-        "Gigabyte",
-        "Intel",
-        "Motherboard"
-      ),
-      9
-    )
-  );
-
-  cargaProductos();
+  $.getJSON("data.json", function (data) {
+    tienda.articulos = data;
+    cargaProductos();
+  });
 }
 
 // Agrega al carrito el item seleccionado

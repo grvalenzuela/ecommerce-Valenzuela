@@ -1,0 +1,79 @@
+[
+  {
+    "articulo": {
+      "id": 1,
+      "nombre": "Placa de Video EVGA GeForce RTX 3090 24GB GDDR6X FTW3 ULTRA ICX3 ARGB",
+      "precio": 550000,
+      "marca": "EVGA",
+      "compatible": "",
+      "tipo": "PlacaVideo"
+    },
+    "stock": 15
+  },
+  {
+    "articulo": {
+      "id": 2,
+      "nombre": "Placa de Video PNY GeForce RTX 3060 Ti 8GB GDDR6 EPIC-X RGB Dual Fan LHR",
+      "precio": 220000,
+      "marca": "PNY",
+      "compatible": "",
+      "tipo": "PlacaVideo"
+    },
+    "stock": 6
+  },
+  {
+    "articulo": {
+      "id": 3,
+      "nombre": "Placa de Video GeForce MSI GTX 1650 4GB GDDR5 Ventus XS OC",
+      "precio": 65000,
+      "marca": "MSI",
+      "compatible": "",
+      "tipo": "PlacaVideo"
+    },
+    "stock": 8
+  },
+  {
+    "articulo": {
+      "id": 4,
+      "nombre": "Procesador AMD Ryzen 7 3700X 4.4GHz AM4 Wraith Prism RGB Led Cooler",
+      "precio": 46000,
+      "marca": "AMD",
+      "compatible": "AMD",
+      "tipo": "Procesador"
+    },
+    "stock": 11
+  },
+  {
+    "articulo": {
+      "id": 5,
+      "nombre": "Procesador Intel Core i7 9700F 4.7Ghz Turbo 1151 Coffe Lake",
+      "precio": 34000,
+      "marca": "Intel",
+      "compatible": "Intel",
+      "tipo": "Procesador"
+    },
+    "stock": 10
+  },
+  {
+    "articulo": {
+      "id": 6,
+      "nombre": "Mother Asus Prime A520M-K AM4",
+      "precio": 5000,
+      "marca": "Asus",
+      "compatible": "AMD",
+      "tipo": "Motherboard"
+    },
+    "stock": 7
+  },
+  {
+    "articulo": {
+      "id": 7,
+      "nombre": "Mother Gigabyte B365M Gaming HD",
+      "precio": 7000,
+      "marca": "Gigabyte",
+      "compatible": "Intel",
+      "tipo": "Motherboard"
+    },
+    "stock": 8
+  }
+]
