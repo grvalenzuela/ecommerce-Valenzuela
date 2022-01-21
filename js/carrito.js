@@ -98,10 +98,53 @@ function borrarItem(idArticulo) {
 
 // procesa pago (al aceptar se entiende como pago), limpia html y carrito
 function procesarPago() {
-  alert("El total a pagar es: " + carrito.precioTotal);
+  //alert("El total a pagar es: " + carrito.precioTotal);
   //se guardan las ganancias del local en el dia podria ser util en un furturo
   //gananciasDia += carrito.precioTotal;
 
+  let seccionPago = $("#seccionPago");
+  seccionPago.append(`
+              <div class="d-flex flex-row align-items-center mt-3 p-2">
+                <div class="col-md-8">
+                  <h5>
+                    El total a pagar es:
+                    <span class="text-success">${carrito.precioTotal}$</span>
+                  </h5>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    class="btn btn-success btn-block justify-content-end"
+                    id="btn-confirmar"
+                    type="button"
+                  >
+                    Confirmnar
+                  </button>
+                  <button
+                    class="btn btn-danger btn-block justify-content-end"
+                    id="btn-cancelar"
+                    type="button"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>`);
+
+  let botonConfirmar = $("#btn-confirmar");
+  botonConfirmar.on("click", function () {
+    confirmarPago();
+  });
+
+  let botonCancelar = $("#btn-cancelar");
+  botonCancelar.on("click", function () {
+    cancelarPago();
+  });
+}
+
+function cancelarPago() {
+  window.location.replace("../index.html");
+}
+
+function confirmarPago() {
   carrito.items = [];
 
   carritoSpan = $("#carrito-cant");

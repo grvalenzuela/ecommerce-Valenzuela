@@ -140,6 +140,9 @@ function seleccion(idArticulo) {
         procesarCarrito();
         let imgGabinete = $("#img-gabinete");
         imgGabinete.attr("src", "../../img/pc/gabinete-a.png");
+
+        //document.getElementById("carritoLink").click();
+        window.location.replace("../carrito.html");
         break;
     }
   });

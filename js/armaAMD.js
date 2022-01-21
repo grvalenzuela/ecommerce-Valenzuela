@@ -139,9 +139,7 @@ function seleccion(idArticulo) {
         let imgGabinete = $("#img-gabinete");
         imgGabinete.attr("src", "../../img/pc/gabinete-a.png");
 
-        let contenedor = $("#contenedorProductos");
-        contenedor.html("");
-
+        window.location.replace("../carrito.html");
         break;
     }
   });
