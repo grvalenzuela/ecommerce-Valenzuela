@@ -16,6 +16,12 @@ class Carrito {
     this.precioTotal = 0;
   }
 
+  encontrarProductoPorIdEncarrito(idBuscado) {
+    return this.items.find(
+      (itemCarrito) => itemCarrito.articulo.id == idBuscado
+    );
+  }
+
   agregarProductoCarrito(itemCarrito) {
     this.items.push(itemCarrito);
     this.calcularTotalCarrito();
@@ -30,7 +36,7 @@ class Carrito {
   }
 
   subirCantidadProducto(idArticulo) {
-    itemCarrito = this.items.find((item) => item.articulo.id == idArticulo);
+    let itemCarrito = this.items.find((item) => item.articulo.id == idArticulo);
     itemCarrito.sumarCantidad();
   }
 
@@ -72,10 +78,12 @@ class StockTienda {
     this.articulos.push(itemTienda);
   }
 
-  // reducirStock(idBuscado){
-  //     itemTienda = this.articulos.find(item => item.articulo.id == idBuscado);
-  //     itemTienda.reducirStock();
-  // }
+  reducirStock(idBuscado) {
+    let itemTienda = this.articulos.find(
+      (item) => item.articulo.id == idBuscado
+    );
+    itemTienda.stock--;
+  }
 
   encontrarProductoPorNombreEnTienda(nombreBuscado) {
     return this.articulos.find((item) => item.articulo.nombre == nombreBuscado);
@@ -84,15 +92,29 @@ class StockTienda {
   encontrarProductoPorIdEnTienda(idBuscado) {
     return this.articulos.find((item) => item.articulo.id == idBuscado);
   }
+
+  traerCompatible(compatible, parte) {
+    if (parte == "") {
+      this.articulos = $.grep(tienda.articulos, function (n, i) {
+        return (
+          n.articulo.compatible == compatible || n.articulo.compatible == ""
+        );
+      });
+    } else {
+      this.articulos = $.grep(tienda.articulos, function (n, i) {
+        return (
+          (n.articulo.compatible == compatible ||
+            n.articulo.compatible == "") &&
+          n.articulo.tipo == parte
+        );
+      });
+    }
+  }
 }
 
 class ItemTienda {
   constructor(articulo, stock) {
     this.articulo = articulo;
     this.stock = stock;
-  }
-
-  reducirStock() {
-    this.stock--;
   }
 }

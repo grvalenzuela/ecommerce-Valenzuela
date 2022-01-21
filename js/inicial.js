@@ -15,6 +15,10 @@ cargaArticulos();
 function cargaArticulos() {
   $.getJSON("data.json", function (data) {
     tienda.articulos = data;
+    // tienda.traerCompatible("AMD", "Procesador");
+    // tienda.articulos = $.grep(tienda.articulos, function (n, i) {
+    //   return n.articulo.compatible == "AMD" || n.articulo.compatible == "";
+    // });
     cargaProductos();
   });
 }
@@ -23,9 +27,14 @@ function cargaArticulos() {
 function agregarCarrito(id) {
   let itemTienda = tienda.encontrarProductoPorIdEnTienda(id);
 
-  carrito.agregarProductoCarrito(new ItemCarrito(itemTienda.articulo));
+  let itemCarrito = carrito.encontrarProductoPorIdEncarrito(id);
+  if (itemCarrito != null) {
+    carrito.subirCantidadProducto(id);
+  } else {
+    carrito.agregarProductoCarrito(new ItemCarrito(itemTienda.articulo));
+  }
 
-  itemTienda.reducirStock();
+  tienda.reducirStock(id);
 
   procesarCarrito();
 }

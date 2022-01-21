@@ -48,7 +48,7 @@ function cargaProductos() {
         "
       >
         <i class="fa fa-minus text-danger"></i>
-        <h5 class="text-grey me-1 ms-1 mt-1">1</h5>
+        <h5 class="text-grey me-1 ms-1 mt-1">${itemCarrito.cantidad}</h5>
         <i class="fa fa-plus text-success"></i>
       </div>
       <div>

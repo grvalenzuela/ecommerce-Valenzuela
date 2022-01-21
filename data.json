@@ -49,7 +49,7 @@
       "nombre": "Procesador Intel Core i7 9700F 4.7Ghz Turbo 1151 Coffe Lake",
       "precio": 34000,
       "marca": "Intel",
-      "compatible": "Intel",
+      "compatible": "INTEL",
       "tipo": "Procesador"
     },
     "stock": 10
@@ -71,9 +71,240 @@
       "nombre": "Mother Gigabyte B365M Gaming HD",
       "precio": 7000,
       "marca": "Gigabyte",
-      "compatible": "Intel",
+      "compatible": "INTEL",
       "tipo": "Motherboard"
     },
     "stock": 8
+  },
+  {
+    "articulo": {
+      "id": 8,
+      "nombre": "Mother Gigabyte AB350M V2.0 DS3H AM4",
+      "precio": 8350,
+      "marca": "Gigabyte",
+      "compatible": "AMD",
+      "tipo": "Motherboard"
+    },
+    "stock": 6
+  },
+  {
+    "articulo": {
+      "id": 9,
+      "nombre": "Mother ASUS ROG STRIX B450-F GAMING II AM4",
+      "precio": 27960,
+      "marca": "Asus",
+      "compatible": "AMD",
+      "tipo": "Motherboard"
+    },
+    "stock": 9
+  },
+  {
+    "articulo": {
+      "id": 10,
+      "nombre": "Mother ASUS PRIME B560M-A S1200 11th Gen PCIe 4.0",
+      "precio": 14230,
+      "marca": "Asus",
+      "compatible": "INTEL",
+      "tipo": "Motherboard"
+    },
+    "stock": 20
+  },
+  {
+    "articulo": {
+      "id": 11,
+      "nombre": "Mother MSI Z590-A PRO ATX 11th gen S1200",
+      "precio": 29800,
+      "marca": "MSI",
+      "compatible": "INTEL",
+      "tipo": "Motherboard"
+    },
+    "stock": 15
+  },
+  {
+    "articulo": {
+      "id": 12,
+      "nombre": "Procesador AMD RYZEN 5 3600 4.2GHz Turbo AM4 Wraith Stealth Cooler",
+      "precio": 43000,
+      "marca": "AMD",
+      "compatible": "AMD",
+      "tipo": "Procesador"
+    },
+    "stock": 19
+  },
+  {
+    "articulo": {
+      "id": 13,
+      "nombre": "Procesador Intel Core i5 9400 4.1GHz Turbo 1151 9th Gen",
+      "precio": 26800,
+      "marca": "Intel",
+      "compatible": "INTEL",
+      "tipo": "Procesador"
+    },
+    "stock": 22
+  },
+  {
+    "articulo": {
+      "id": 14,
+      "nombre": "Placa de Video ASUS Radeon RX 6600 XT 8GB GDDR6 DUAL OC",
+      "precio": 128630,
+      "marca": "Asus",
+      "compatible": "",
+      "tipo": "PlacaVideo"
+    },
+    "stock": 12
+  },
+  {
+    "articulo": {
+      "id": 15,
+      "nombre": "Memoria GeiL DDR4 8GB 3200MHz EVO POTENZA Black",
+      "precio": 5360,
+      "marca": "Geil",
+      "compatible": "",
+      "tipo": "RAM"
+    },
+    "stock": 13
+  },
+  {
+    "articulo": {
+      "id": 16,
+      "nombre": "Memoria GEIL DDR4 16GB (2x8GB) 3200Mhz EVO POTENZA RED Cl16",
+      "precio": 8550,
+      "marca": "Geil",
+      "compatible": "",
+      "tipo": "RAM"
+    },
+    "stock": 17
+  },
+  {
+    "articulo": {
+      "id": 17,
+      "nombre": "Memoria Patriot Viper DDR4 16GB (2x8GB) 3200MHz Steel RGB",
+      "precio": 8550,
+      "marca": "Patriot",
+      "compatible": "",
+      "tipo": "RAM"
+    },
+    "stock": 19
+  },
+  {
+    "articulo": {
+      "id": 18,
+      "nombre": "Memoria OLOy DDR4 16GB (2x8GB) 4000MHz",
+      "precio": 20860,
+      "marca": "OLOy",
+      "compatible": "",
+      "tipo": "RAM"
+    },
+    "stock": 14
+  },
+  {
+    "articulo": {
+      "id": 19,
+      "nombre": "Disco Rígido WD 1TB BLUE 64MB SATA 6.0GB/s",
+      "precio": 5120,
+      "marca": "WD",
+      "compatible": "",
+      "tipo": "HDD"
+    },
+    "stock": 30
+  },
+  {
+    "articulo": {
+      "id": 20,
+      "nombre": "Disco Rigido WD 4TB Purple 5.4K RPM 64MB",
+      "precio": 11800,
+      "marca": "WD",
+      "compatible": "",
+      "tipo": "HDD"
+    },
+    "stock": 20
+  },
+  {
+    "articulo": {
+      "id": 21,
+      "nombre": "Disco Solido SSD M.2 ADATA 500GB SWORDFISH 1800MB/s NVMe PCI-e x4",
+      "precio": 7150,
+      "marca": "ADATA",
+      "compatible": "",
+      "tipo": "SDD"
+    },
+    "stock": 21
+  },
+  {
+    "articulo": {
+      "id": 22,
+      "nombre": "Disco Solido SSD M.2 WD 1TB Black SE750 3600MB/s NVMe PCIe Gen4",
+      "precio": 19200,
+      "marca": "WD",
+      "compatible": "",
+      "tipo": "SDD"
+    },
+    "stock": 18
+  },
+  {
+    "articulo": {
+      "id": 23,
+      "nombre": "Fuente ASUS TUF 650B 80 Plus Bronze 650W",
+      "precio": 12300,
+      "marca": "Asus",
+      "compatible": "",
+      "tipo": "Fuente"
+    },
+    "stock": 12
+  },
+  {
+    "articulo": {
+      "id": 24,
+      "nombre": "Fuente Aerocool Cylon 700W Full Range RGB 80 Plus Bronze",
+      "precio": 8900,
+      "marca": "Aerocool",
+      "compatible": "",
+      "tipo": "Fuente"
+    },
+    "stock": 24
+  },
+  {
+    "articulo": {
+      "id": 25,
+      "nombre": "Fuente ASUS ROG STRIX 850G 80 Plus Gold 850W Full Modular",
+      "precio": 38620,
+      "marca": "Asus",
+      "compatible": "",
+      "tipo": "Fuente"
+    },
+    "stock": 12
+  },
+  {
+    "articulo": {
+      "id": 26,
+      "nombre": "Gabinete Gamemax H602 WB White M-ATX FAN 1 x 120mm",
+      "precio": 4100,
+      "marca": "Gamemax",
+      "compatible": "",
+      "tipo": "Gabinete"
+    },
+    "stock": 10
+  },
+  {
+    "articulo": {
+      "id": 27,
+      "nombre": "Gabinete Aerocool Airhawk Duo Black Vidrio Templado",
+      "precio": 12000,
+      "marca": "Aerocool",
+      "compatible": "",
+      "tipo": "Gabinete"
+    },
+    "stock": 8
+  },
+  {
+    "articulo": {
+      "id": 28,
+      "nombre": "Gabinete ASUS ROG STRIX Helios Aluminum Black RGB",
+      "precio": 49960,
+      "marca": "Asus",
+      "compatible": "",
+      "tipo": "Gabinete"
+    },
+    "stock": 7
   }
 ]
